@@ -7,6 +7,7 @@ nodeNumber = 0
 
 
 class State():
+    """Lol"""
     def __init__(self, floor, genM, chM):
         self.floor = floor
         self.genM = genM
@@ -14,7 +15,7 @@ class State():
         self.pairVector = numpy.sum(numpy.logical_and(genM, chM), 1)
         self.singleChipVector = numpy.sum(chM, 1) - self.pairVector
         self.singleGenVector = numpy.sum(genM, 1) - self.pairVector
-        self.singleAllVector = self.singleChipVector + self.singleGenVector;
+        self.singleAllVector = self.singleChipVector + self.singleGenVector
 
     def __eq__(self, other):
         # return ((self.pairVector == other.pairVector).all() and
@@ -26,8 +27,8 @@ class State():
                 # (self.genM == other.genM).all() and
                 # (self.chM == other.chM).all() and
                 (self.singleGenVector == other.singleGenVector).all() and
-                (self.floor == other.floor))# and
-                #(self.singleGenVector == other.singleGenVector).all())
+                (self.floor == other.floor))  # and
+                # (self.singleGenVector == other.singleGenVector).all())
 
 
 class Node():
